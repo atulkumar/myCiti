@@ -1,0 +1,42 @@
+﻿<ion-view view-title="Movies" class="movies-listing-view">
+    <ion-content>
+        <ul>
+            <li ng-repeat="movie in movies | orderBy:'priority'" class="col">
+                <a href=#/app/movieDetails/{{movie.$id}} ">
+         <div class="card ">
+   <div class="item">  
+       <div class="image-container"> 
+       <img ng-src='{{images[movie.name]}}' class="full-image " height="150px;">
+        <div id="fav" class="fav"><span class="ion-heart abc" style="color:#e91e63"></span>
+        <div style="font-size:small;text-align:center">{{getRandomNumber(100,9999)}}</div>
+       </div>   
+     
+   </div>
+   <div class="item item-body">
+              <h3>{{movie.name | uppercase}} <span> - {{movie.certification | uppercase}} </span></h3> 
+              <div class="small">
+              ({{movie.language | camelcase}} <span ng-if="movie.duration!=null ">- {{movie.duration}} mins</span>)      
+                    <span ng-if="movie.genre!=null ">
+                    <span ng-repeat="genre in movie.genre " style="font-style:italic ">
+                    {{genre}}                    
+                </span> </span>
+                    <span class="tag " style="margin:2px ">
+                    {{movie.type}}</span>
+                    
+                    <div ng-if="movie.venue!=null ">
+                        <span class="ion-clock "></span>
+                    <span ng-repeat="venue in movie.venue ">                            
+                        <span ng-repeat="time in venue.timings ">
+                            {{time}}
+                        </span>
+                    </span>
+                    </div></div>
+</div>
+<!--<div class="item item-footer ">
+      
+</div>-->
+              </div></a>
+                       </li>
+        </ul>
+    </ion-content>
+</ion-view>

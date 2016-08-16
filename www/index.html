@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; *; style-src  &apos;self&apos; &apos;unsafe-inline&apos; *">-->
+    <title>My App</title>
+    <!--<link href="lib/materialize/dist/css/materialize.css" rel="stylesheet">-->
+    <!--<link href="lib/ionic/css/ionic.css" rel="stylesheet">-->
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Third-party JS-->
+    <!--<script src="lib/jquery/dist/jquery.min.js"></script>    
+<script src="lib/materialize/dist/js/materialize.js"></script>-->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!--<script src="lib/firebase/firebase.js"></script>-->
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <!--<script src="lib/ngmap/build/scripts/ng-map.min.js"></script>-->
+    <script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/angular-moment/angular-moment.min.js"></script>
+    <script src="lib/angularjs-filters/filters.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova-mocks.min.js"></script>
+    <!--<script src="lib/angular-youtube-mb/dist/angular-youtube-embed.min.js"></script>-->
+    <script src="cordova.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+
+    <!--<script src="https://maps.google.com/maps/api/js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>-->
+
+    <!--main app module-->
+    <script src="js/app.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/firebaseData.service.js"></script>
+    <script src="js/firebaseStorage.service.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="home/homeCtrl.js"></script>
+    <script src="home/homeService.js"></script>
+    <script src="subCategories/subCategoriesCtrl.js"></script>
+    <script src="subCategories/subCategoriesService.js"></script>
+    <script src="intro/introCtrl.js"></script>
+    <script src="events/eventsCtrl.js"></script>
+    <script src="events/eventsService.js"></script>
+    <script src="dining/diningCtrl.js"></script>
+    <script src="dining/diningService.js"></script>
+    <script src="medical/medicalCtrl.js"></script>
+    <script src="medical/medicalService.js"></script>
+    <script src="entertainment/entertainmentCtrl.js"></script>
+    <script src="entertainment/entertainmentService.js"></script>
+    <script src="services/servicesCtrl.js"></script>
+    <script src="services/service.js"></script>
+    <script src="default/defaultCtrl.js"></script>
+    <script src="default/defaultService.js"></script>
+    <!--<script src="js/views.js"></script>-->
+    <!--<script src="js/directives.js"></script>-->
+    <!--<script src="js/config.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/factories.js"></script>-->
+    <script>
+        // Initialize Firebase. Use your own config values here. This is just a sample.
+        // You can copy and paste your config values by following the instructions at
+        // https://firebase.google.com/docs/web/setup#add_firebase_to_your_app.
+        var config = {
+            apiKey: "AIzaSyCpObJcPFHw5yhzlGq-pf__EfKKJ4-Un08",
+            authDomain: "resplendent-heat-2623.firebaseapp.com",
+            databaseURL: "https://resplendent-heat-2623.firebaseio.com",
+            storageBucket: "resplendent-heat-2623.appspot.com",
+        };
+        //debugger;
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body ng-app="myCiti">
+    <ion-nav-view></ion-nav-view>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+﻿<ion-view>
+     <ion-nav-title>
+    <span>Events</span>
+  </ion-nav-title>
+    <ion-content>        
+        <div class="eventSearch">
+            <button class="button button-icon ion-android-search"
+                    ng-click="showFilterBar()"></button>
+        </div>
+                <ion-list>
+            <ion-item ng-repeat="event in events" href="#/app/eventDetails/{{event.name}}">
+                    <img ng-src="{{event.mainImage}}" style="width:30%;height:30%;margin:auto">
+                {{event.title}}<br>{{$id}}
+                {{event.shortInfo}}                                
+                From : {{event.fromDate}} To :{{event.toDate}} 
+            </ion-item>            
+        </ion-list>
+    </ion-content>
+</ion-view>

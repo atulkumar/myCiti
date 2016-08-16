@@ -1,0 +1,21 @@
+﻿<ion-view>     
+  <ion-nav-title>
+    <span>{{pageTitle}}</span>
+  </ion-nav-title>
+    <ion-content>
+        <!--Top slider-->
+        <ion-slide-box does-continue="true">
+            <ion-slide ng-repeat="slide in slides">
+                <a href="#/app/directory">
+                    <img ng-src="{{slide.imageUrl}}" style="height:30%;margin:auto;display:block">
+                </a>
+            </ion-slide>
+        </ion-slide-box>
+        <br />
+        <ion-list>
+            <ion-item ng-repeat="subCategory in subCategories" href="{{getUrl(subCategory.category,subCategory.name)}}" ng-style="{'line-height': '60px'}">
+                {{subCategory.title}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

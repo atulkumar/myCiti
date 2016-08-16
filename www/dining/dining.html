@@ -1,0 +1,36 @@
+﻿<ion-view view-title="{{pageTitle | camelcase}}" class="restaurants-listing-view">
+    <ion-content>        
+        <!--Top slider-->
+        <!--<ion-slide-box does-continue="true">
+            <ion-slide ng-repeat="slide in slides">
+                <a href="#/app/directory">
+                    <img ng-src="{{slide.imageUrl}}" style="width:100%;height:30%;margin:auto;display:block">
+                </a>
+            </ion-slide>
+        </ion-slide-box>        -->
+        <!--Categories-->
+        <ul class="col">
+            <li ng-repeat="restaurant in restaurants | orderBy:'priority'">               
+                <a href="#/app/restaurantDetails/{{restaurant.$id}}">
+                <img src="http://lorempixum.com/100/100/nature/1" />
+                <h3>{{restaurant.name | camelcase}}</h3>
+                <p>{{restaurant.desc}}</p>
+                <span ng-if="restaurant['is-only-veg']===true">Veg </span><span class="rest-desc" ng-if="restaurant['is-only-veg']===false">Veg / Non-Veg</span>
+                <span ng-if="restaurant['is-bar']===true">Bar </span>
+                <div ng-if="restaurant['average-cost-for-two']!=null">Cost: {{restaurant['average-cost-for-two']}}</div>
+                <div ng-if="restaurant['opening-hours'] !=null">
+                    <span>Opening Hours:</span>
+                    <span ng-repeat="timing in restaurant['opening-hours']" style="font-style:italic">
+                    <span ng-if="$index>0"> , </span> {{timing.from}} - {{timing.to }}
+                    </span>
+                </div>
+                <div ng-if="restaurant['tags'] !=null">
+                    <span ng-repeat="tag in restaurant['tags']" style="font-style:italic">
+                    <span ng-if="$index>0"> {{tag | camelcase}}{{$last ? '' : ', '}}
+                </span>
+                </div>
+                </a>
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

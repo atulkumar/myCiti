@@ -1,0 +1,13 @@
+<ion-view>
+     <ion-nav-title>
+    <span>Services</span>
+  </ion-nav-title>
+    <ion-content>        
+            <ion-list>
+            <ion-item ng-repeat="service in serviceCategories" href="#/app/services/{{service.id}}">
+                    <!--<img ng-src="{{.mainImage}}" style="width:30%;height:30%;margin:auto">-->
+            {{service.id}}-{{service.title}}                                
+            </ion-item>            
+        </ion-list>        
+    </ion-content>
+</ion-view>

@@ -1,0 +1,62 @@
+<ion-view view-title={{movie.name|uppercase}} class="movie-details-view">
+    <ion-content>
+        <div class="card ">
+            <div class="item">
+                <img ng-src='{{image}}' class="full-image " height="150px;">
+            </div>
+
+            <div class="item item-body">
+                <div>
+                    <span><h3>{{movie.name | uppercase}} </h3> ({{movie.language | camelcase}} - {{getFormatDuration(movie.duration)}})</span>
+                    <div ng-if="movie.genre!=null">
+                        <span ng-repeat=" genre in movie.genre">                            
+                    <span ng-if='genre.length > 0' class="tag">{{genre | camelcase}}</span>                    
+                </span> </div>
+                    <br /><span class="badge">
+                    {{movie.certification | uppercase}}</span>
+                </div>
+            </div>
+        </div>
+         <div class="card" ng-if='movie.venue != null'>
+            <div class="item">                
+                    <h4>TIMINGS:</h4>                
+            </div>
+            <div class="item item-body"><span class="ion-clock "></span>
+              <span ng-repeat="venue in movie.venue " style="font-style:italic ">                            
+                        <span ng-repeat="time in venue.timings " style="font-style:italic ">
+                            {{time}}
+                        </span>
+                    </span>
+            </div>
+        </div>
+        <div class="card" ng-if='movie.cast != null'>
+            <div class="item">                
+                    <h4>CAST:</h4>                
+            </div>
+            <div class="item item-body">
+                <div>{{movie.cast | camelcase}} </div>
+                <div ng-if="movie.director!= null">
+                    <div>Directed by:{{movie.director | camelcase}} </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" ng-if="movie.desc != null">
+            <div class="item">
+                <div ng-if="movie.desc != null">
+                    <h4>SYNOPSIS:</h4>
+                </div>
+            </div>
+            <div class="item item-body">
+                <div class="small">{{movie.desc}} </div>
+
+            </div>
+            <div class="card" ng-if='movie["youtube-link"] != null'>
+                <div class="item item-body">
+                    <div class="video-container">
+                        <iframe src='{{movie["youtube-link"]}}' frameborder="0" width="560" height="315"></iframe>
+                    </div>
+
+                </div>
+            </div>
+    </ion-content>
+</ion-view>

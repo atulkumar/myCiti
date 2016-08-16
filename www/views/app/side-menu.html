@@ -1,0 +1,62 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content class="post-size-14px">
+    <ion-nav-bar class="bar app-top-bar">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>      
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+    <ion-side-menu class="main-menu" side="left" width="230">       
+        <ion-content>
+            <ion-list>                                
+                <ion-item class="item item-icon-left" nav-clear menu-close ui-sref="app.home">
+          <i class="icon ion-ios-home-outline"></i>
+          <h2 class="menu-text">Home</h2>
+        </ion-item>
+        <ion-item class="item item-icon-left" nav-clear menu-close ui-sref="app.directory">
+          <i class="icon ion-ios-folder-outline"></i>
+          <h2 class="menu-text">Directory</h2>
+        </ion-item>
+        <ion-item class="item item-icon-left" nav-clear menu-close ui-sref="app.events">
+          <i class="icon ion-ios-calendar-outline"></i>
+          <h2 class="menu-text">Events</h2>
+        </ion-item>
+        <ion-item class="item item-icon-left" nav-clear menu-close ui-sref="app.offers">
+          <i class="icon ion-quote"></i>
+          <h2 class="menu-text">Offers</h2>
+        </ion-item>
+        <ion-item class="item item-icon-left" nav-clear menu-close ui-sref="app.favourites">
+          <i class="icon ion-ios-heart-outline"></i>
+          <h2 class="menu-text">Favourites</h2>
+        </ion-item>
+        <ion-item class="item item-icon-left" nav-clear menu-close ui-sref="app.profile">
+          <i class="icon ion-ios-person-outline"></i>
+          <h2 class="menu-text">Profile</h2>
+        </ion-item>
+                <ion-item class="item item-icon-left" nav-clear menu-close ui-sref="app.info">
+          <i class="icon ion-quote"></i>
+          <h2 class="menu-text">info</h2>
+        </ion-item>
+        <ion-item class="item item-icon-left" nav-clear menu-close ui-sref="app.contact">
+          <i class="icon ion-quote"></i>
+          <h2 class="menu-text">Contact</h2>
+        </ion-item>
+        <ion-item class="item item-icon-left" nav-clear menu-close ui-sref="app.settings">
+          <i class="icon ion-gear-a"></i>
+          <h2 class="menu-text">Settings</h2>
+        </ion-item>                
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+    <!--<ion-side-menu class="multi-level-push-menu" side="right" ng-controller="PushMenuCtrl">
+    <ion-content has-bouncing="false" scroll="false">
+      <wp-search>
+      </wp-search>
+      <push-menu menu="menu"></push-menu>
+    </ion-content>
+  </ion-side-menu>-->
+</ion-side-menus>

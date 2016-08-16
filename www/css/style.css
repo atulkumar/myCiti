@@ -1,0 +1,583 @@
+/* Empty. Add your own CSS if you like */
+
+.walkthrough-view {
+  /*background-color: #00BCD4; */
+  background-image: url('/img/background_pic.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.walkthrough-view .top-content {
+  height: 85%;
+}
+
+.walkthrough-view .top-content .slider {
+  height: 100%;
+}
+
+.walkthrough-view .top-content .slider .slider-slide {
+  width: calc(100vw - 10px) !important;
+}
+
+.walkthrough-view .top-content .slide-content {
+  height: 100%;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.walkthrough-view .top-content .slide-content .slide-image {
+  width: 50%;
+  margin: 40px 0px 50px;
+}
+
+.walkthrough-view .top-content .slide-h {
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+.walkthrough-view .top-content .slide-p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+
+.walkthrough-view .top-content .slider-pager {
+  bottom: 2px;
+}
+
+.walkthrough-view .top-content .slider-pager .slider-pager-page i {
+  color: #00BCD4;
+}
+
+.walkthrough-view .top-content .slider-pager .slider-pager-page.active i {
+  color: #FFFFFF;
+}
+
+.walkthrough-view .bottom-content {
+  height: 15%;
+  margin: 0px;
+}
+
+.walkthrough-view .bottom-content .login,
+.walkthrough-view .bottom-content .sign-up {
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.walkthrough-view .bottom-content .login {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(47, 91, 121, 0.85);
+  border-color: rgba(46, 88, 117, 0.9);
+}
+
+.walkthrough-view .bottom-content .sign-up {
+  color: rgba(47, 91, 121, 0.9);
+  background-color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(252, 252, 252, 0.9);
+}
+
+.main-menu ion-content {
+  background-color: #2b2b2b;
+}
+
+.main-menu ion-item.item {
+  border-right: none;
+  border-left: none;
+  border-color: rgba(179, 179, 179, 0.2);
+  background-color: #2b2b2b;
+}
+
+.main-menu ion-item.item .item-content {
+  background-color: #2b2b2b;
+  padding: 20px;
+  padding-left: 60px;
+}
+
+.main-menu ion-item.item .item-content .icon {
+  width: 30px;
+  left: 20px;
+}
+
+.main-menu ion-item.item .item-content .icon:before {
+  color: #FFFFFF;
+  font-size: 26px;
+}
+
+.main-menu ion-item.item .item-content.activated {
+  background-color: #5e5e5e;
+}
+
+.main-menu ion-item.item .menu-text {
+  color: #b3b3b3;
+  font-weight: 500;
+}
+
+.main-menu ion-item.item:first-child {
+  border-top: none;
+}
+
+.main-menu .heading-item {
+  margin: 0px;
+}
+
+.main-menu .heading-item .item-content {
+  padding: 0px !important;
+  position: relative;
+  height: 230px;
+}
+
+.main-menu .heading-item .heading-bg {
+  position: absolute;
+  background-color: rgba(68, 68, 68, 0.6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.main-menu .heading-item .heading-action {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 20px;
+  padding-left: 60px;
+}
+
+.main-menu .heading-item img {
+  width: 100%;
+}
+
+.main-menu .heading-item .greeting {
+  color: #cccccc;
+  font-weight: 500;
+}
+
+.settings-view {
+  background-color: #EAEAEA !important;
+}
+
+.faqs {
+  padding: 10px;
+  text-align: justify;
+}
+
+.terms-of-service {
+  padding: 10px;
+  text-align: justify;
+}
+
+.restaurants-listing-view {
+  background-color: #EAEAEA !important;
+}
+
+.restaurants-listing-view .categories-list {
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.restaurants-listing-view ul {
+  list-style-type: none;
+}
+
+.restaurants-listing-view h3 {
+  margin: 0;
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.restaurants-listing-view li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+.restaurants-listing-view li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.restaurants-listing-view li {
+  padding: 10px;
+  margin: 10px 0;
+  overflow: auto;
+  background-color: white;
+  min-height: 150px;
+}
+
+.restaurants-listing-view li:hover {
+  background: #fff;
+  cursor: pointer;
+}
+
+
+/*movies*/
+
+.movies-listing-view {
+  background-color: #fff !important;
+}
+
+.movies-listing-view ul {
+  list-style-type: none;
+}
+
+.movies-listing-view li {
+  margin: 10px 0;
+  overflow: auto;
+  background-color: white;
+  min-height: 150px;
+}
+
+.movies-listing-view li:hover {
+  background: #fff;
+  cursor: pointer;
+}
+
+.movies-listing-view .card {
+  margin: 0;
+}
+
+.movies-listing-view .item {
+  padding: 5px;
+  border: none;
+}
+
+.movies-listing-view h1,
+h2,
+h3,
+h4 {
+  margin: 1.414em 0 0.5em;
+  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.movies-listing-view h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+
+.movies-listing-view h2 {
+  font-size: 2.827em;
+}
+
+.movies-listing-view h3 {
+  font-size: 1.999em;
+}
+
+.movies-listing-view h4 {
+  font-size: 1.414em;
+}
+
+.movies-listing-view h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.movies-listing-view .small,
+.font_small {
+  font-size: 0.807em;
+}
+
+
+/* */
+
+
+/*movie details*/
+
+.movie-details-view {
+  background-color: #fff !important;
+}
+
+.movie-details-view .card {
+  margin: 4px 1px;
+}
+
+.movie-details-view .item {
+  padding: 5px;
+  border: none;
+}
+
+.movie-details-view h1,
+h2,
+h3,
+h4 {
+  margin: 1.414em 0 0.5em;
+  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.movie-details-view h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+
+.movie-details-view h2 {
+  font-size: 2.827em;
+}
+
+.movie-details-view h4 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.movie-details-view h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.movie-details-view .small,
+.font_small {
+  font-size: 0.807em;
+}
+
+.movie-details-view .tag {
+  padding-left: .6em;
+  padding-right: .6em;
+  line-height: 1.8em;
+  font-size: 14px;
+  font-weight: normal;
+  color: #fff;
+  background: #e91e63;
+  border-radius: 5px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.fav {
+  font-size: 40px;
+  position: absolute;
+  top: 100%;
+  left: 95%;
+  width: 50px;
+  height: 40px;
+  margin: -22px 0 0 -35px;
+  z-index: 10;
+  text-align: center;
+}
+
+.cicle {
+  height: 30px;
+  width: 30px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  background: black;
+}
+
+
+/**/
+
+.portfolio-wide .portfolio-item {
+  margin-bottom: 5px;
+}
+
+.portfolio-item {
+  transition: all 250ms ease;
+}
+
+.portfolio-wide .wide-title {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-wide .wide-title .overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  opacity: 0.6!important;
+  top: 0px;
+}
+
+.portfolio-wide .wide-title img {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+
+.portfolio-wide .wide-title h3 {
+  font-weight: 400;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  color: #FFFFFF;
+  padding-top: 35px;
+  margin-bottom: 0px;
+}
+
+.portfolio-wide .wide-title em {
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  display: block;
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.6);
+  padding-bottom: 30px;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*Health details*/
+
+.myCiti-view {
+  background-color: #fff !important;
+}
+
+.myCiti-view .card {
+  margin: 4px 1px;
+}
+
+.myCiti-view .item {
+  padding: 5px;
+  border: none;
+}
+
+.myCiti-view h1,
+h2,
+h3,
+h4 {
+  margin: 1.414em 0 0.5em;
+  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.myCiti-view h1 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.myCiti-view h2 {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.myCiti-view h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.myCiti-view h4 {
+  font-size: 16px;
+  margin-top: 0;  
+}
+
+.myCiti-view h5 {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.myCiti-view .small,
+.font_small {
+  font-size: 0.807em;
+}
+
+.myCiti-view p {
+  font-size: 0.907em;
+}
+
+.myCiti-view .tag {
+  padding-left: .6em;
+  padding-right: .6em;
+  line-height: 1.8em;
+  font-size: 14px;
+  font-weight: normal;
+  color: #fff;
+  background: #e91e63;
+  border-radius: 5px;
+}
+
+.myCiti-view ul.list {
+  list-style: square;
+  padding-left: 20px;
+}
+
+/*INTRO*/
+.intro{
+ padding:10px;
+}
+.intro .slider {
+  height: 85%;
+}
+.intro .slider-slide {
+  padding-top: 80px;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+
+.intro #logo { 
+  margin: 20px 0px;
+}
+
+.intro #list {
+  width: 170px;
+  margin: 30px auto;
+  font-size: 20px;
+}
+.intro #list ol {
+  margin-top: 30px;
+}
+.intro #list ol li {
+  text-align: left;
+  list-style: decimal;
+  margin: 10px 0px;
+}

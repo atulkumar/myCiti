@@ -1,0 +1,43 @@
+<ion-view class="feeds-categories-view">
+    <ion-nav-title>
+        <span>{{mainCategory.name | camelcase}}</span>
+    </ion-nav-title>
+    <ion-content>
+        <!--Top slider-->
+        <!--<ion-slide-box does-continue="true">
+            <ion-slide ng-repeat="slide in slides">
+                <a href="#/app/directory">
+                    <img ng-src="{{slide.imageUrl}}" style="height:30%;margin:auto;display:block">
+                </a>
+            </ion-slide>
+        </ion-slide-box>-->
+        <br />
+        <!--<ion-list>
+            <ion-item ng-repeat="subCategory in subCategories" href="{{getUrl(subCategory.category,subCategory.name)}}" ng-style="{'line-height': '60px'}">
+                {{subCategory.name}}
+            </ion-item>
+        </ion-list>-->
+        <!--<div ng-repeat="subCategory in subCategories | orderBy:'priority'" class="col">
+            <a class="feed-category" href={{getUrl(subCategory.$id,subCategory.name)}}>
+                <img class="category-image" ng-src="{{subCategory.image}}" spinner-on-load>
+                <div class="category-bg"></div>
+                <span class="category-title">{{subCategory.name}}</span>
+            </a>
+        </div>-->
+           <!--<img ng-src="{{profilepic}}">-->
+        <div class="portfolio-wide">
+            <div ng-repeat="subCategory in subCategories | orderBy:'priority'" class="portfolio-item">
+                <a class="wide-title show-wide-text" href={{getUrl(subCategory.$id,subCategory.name)}}>
+                    <h3>{{subCategory.name | camelcase}}</h3>
+                    <em>&nbsp;</em>
+
+                    <div class="overlay bg-black"></div>
+                        <!--{{subCategory.image}}-->
+                    <!--<img ng-src="{{getImageUrl(subCategory.image)}}">-->                  
+                     <img ng-src='{{images[subCategory.name]}}'>
+                    <!--<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRTag34ltqOkXQjyLfwrfFe-37GyVRjNvSROAx_wZVlEP4X_SDC" alt="img">-->
+                </a>
+            </div>          
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,216 @@
+{
+  "categories" : {
+    "dining" : {
+      "restaurants" : {
+        "APHotel" : {
+          "average_cost_for_two" : 500,
+          "bar" : true,
+          "category" : "Delivery|Dine-out",
+          "cuisine" : [ null, "fast food" ],
+          "desc" : "desciption",
+          "establishment" : "Casual Dining",
+          "has_home_delivery" : true,
+          "location" : {
+            "address" : "main road",
+            "floor" : 1,
+            "latitude" : 40.34343,
+            "locality" : "civil lines",
+            "longitude" : -73.343434
+          },
+          "mainImage" : "a.jpg",
+          "menu" : [ null, "a.jpg", "2.jpg" ],
+          "misc" : {
+            "Heading 2" : "this is heading 2",
+            "Heading1" : "this is heading 1"
+          },
+          "non-veg" : false,
+          "openingHours" : [ null, {
+            "from" : "10:00",
+            "to" : "14:00"
+          }, {
+            "from" : "16:00",
+            "to" : "23:00"
+          } ],
+          "otherInfo" : [ null, "Good Restaurant", "old in city" ],
+          "photos" : [ null, "abc.jpg", "xyz.jpg" ],
+          "shortInfo" : "short info",
+          "special" : {
+            "by chef" : "try things by Chef",
+            "discount" : "Get 10% discount"
+          },
+          "subCategory" : "fastfood",
+          "tags" : [ null, "fast food", "Indian", "lunch", "dinner", "North Indian" ],
+          "title " : "A P Residency",
+          "veg" : true
+        }
+      }
+    },
+    "entertainment" : {
+      "image" : "",
+      "isActive" : true,
+      "movies" : {
+        "Race" : {
+          "desc" : "Race is a...",
+          "director" : "jahn",
+          "duration" : 150,
+          "fromDate" : "17/2/2016",
+          "genre" : [ null, "Thriller", "Drama" ],
+          "isPublished" : true,
+          "language" : "Hindi",
+          "mainImage" : "a.jpg",
+          "shortInfo" : "short desc",
+          "title" : "Race",
+          "toDate" : "23/02/2016",
+          "venue" : {
+            "multiplex" : "Fun cinema",
+            "timings" : [ null, 11, 22, "22:30" ]
+          },
+          "youtube" : "www.youtube.com/race"
+        },
+        "don" : {
+          "cast" : [ null, "Sharukh khan", "kareena", "johny" ],
+          "desc" : "movie desciption",
+          "director" : "atul",
+          "duration" : 180,
+          "fromDate" : "13/2/2016",
+          "genre" : [ null, "Drama", "Thriller" ],
+          "isPublished" : true,
+          "language" : "hindi",
+          "mainImage" : "a.jpg",
+          "releaseDate" : "20/2/2016",
+          "shortInfo" : "shortinformation about movie",
+          "title" : "Don",
+          "toDate" : "20/2/2016",
+          "type" : "UA",
+          "venue" : {
+            "1" : "fun cinema",
+            "timings" : [ null, 10, "12:30", "15:45", 18, 22 ]
+          },
+          "youtube" : "www.youtube.com/don"
+        }
+      },
+      "name" : "entertainment",
+      "title" : "Entertainment"
+    },
+    "events" : {
+      "-K920WTnScOFoUz_RMeQ" : {
+        "image" : "",
+        "isActive" : true,
+        "name" : "event 9",
+        "title" : "event 9"
+      },
+      "-K920bki1-FWdUTB7VsO" : {
+        "image" : "",
+        "isActive" : false,
+        "name" : "event 6",
+        "title" : "event 6"
+      },
+      "-K922gt5zJ0PHWfMInqZ" : {
+        "address" : {
+          "location" : 12
+        },
+        "contactInfo" : {
+          "mobile1" : 22323232,
+          "mobile2" : 3949349,
+          "tel" : 743743
+        },
+        "desc" : "main description ",
+        "fromDate" : "2016-01-12",
+        "fromTiming" : "",
+        "images" : [ "a.jpg", "b.jpg" ],
+        "isFullDayEvent" : false,
+        "isPublished" : true,
+        "mainImage" : "main..jpeg",
+        "misc" : {
+          "Heading1" : "this is heading1 text",
+          "Heading2" : "this is heading 2 info"
+        },
+        "name" : "event12",
+        "otherInfo" : [ null, "this is other information text" ],
+        "shortInfo" : "short information",
+        "title" : "event 12",
+        "toDate" : "2016-01-16",
+        "toTiming" : ""
+      }
+    },
+    "services" : {
+      "Accountants" : {
+        "1" : {
+          "name" : "ABC accounting"
+        },
+        "title" : "Accountants"
+      },
+      "Architects" : [ null, {
+        "address" : 123,
+        "contact" : {
+          "email" : "aa@yahoo.com",
+          "mobile" : 22323232,
+          "mobile2" : 334344242,
+          "phone" : 2323232
+        },
+        "desc" : "description",
+        "is_published" : true,
+        "main_image" : "a.jpg",
+        "name" : "xyz architects",
+        "other_info" : [ null, "Experienced", "Reputed in Divorce" ],
+        "photos" : [ null, "1.jpg", "2.jpg" ],
+        "short_info" : "this is short information",
+        "special" : {
+          "Experience" : "12 years"
+        },
+        "timings" : [ null, {
+          "from" : 8,
+          "to" : 10
+        } ]
+      } ],
+      "Home_care" : {
+        "1" : {
+          "name" : "home care"
+        },
+        "title" : "Home care & Maintenance"
+      },
+      "Lawyers" : [ null, {
+        "name" : "ABC"
+      } ],
+      "Repair" : {
+        "1" : {
+          "name" : "Repair & Maintaince"
+        },
+        "title" : "Repair & Maintenance"
+      },
+      "automative" : [ null, {
+        "name" : "Guru"
+      } ],
+      "beauty" : {
+        "1" : {
+          "name" : "abc hair dresser"
+        },
+        "title" : "Beauty & Spa"
+      },
+      "business" : [ null, {
+        "name" : "Business Services"
+      } ],
+      "events" : [ null, {
+        "name" : "wedding and Events"
+      } ],
+      "health" : {
+        "dietician" : [ null, {
+          "name" : "abc dietiian"
+        } ]
+      },
+      "image" : "",
+      "isActive" : true,
+      "matchMakers" : [ null, {
+        "name" : "matching service"
+      } ],
+      "name" : "services",
+      "title" : "Services"
+    },
+    "shopping" : {
+      "image" : "",
+      "isActive" : true,
+      "name" : "shopping",
+      "title" : "Shopping"
+    }
+  }
+}

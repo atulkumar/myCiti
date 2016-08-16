@@ -1,0 +1,42 @@
+﻿<ion-view>
+     <ion-nav-title>
+        <span>Events</span>
+    </ion-nav-title>
+    <ion-content>
+        <div ng-repeat="ev in event">            
+           <img ng-src="{{ev.mainImage}}" style="width:100%;height:30%;margin:auto">
+        {{ev.name}}
+        <p>{{ev.shortInfo}}</p>
+        <p>{{ev.desc}}</p>
+        <p>{{ev.fromDate}}</p>
+        <p>{{ev.toDate}}</p>
+        <div ng-if="ev.contactInfo">
+            <span ng-if="ev.contactInfo.mobile1">Mobile: {{ev.contactInfo.mobile1}}</span>
+            <span ng-if="ev.contactInfo.mobile1 || ev.contactInfo.mobile2">,</span>
+            <span ng-if="ev.contactInfo.mobile2">{{ev.contactInfo.mobile2}}</span>
+            </div>
+        <span ng-repeat="im in ev.images" style="font-style:italic">
+                  <img ng-src="{{im}}" style="width:30%;height:30%;margin:auto">
+        </span> 
+        <ul ng-if="ev.features.length>0">Features :
+            <li ng-repeat="(key, value)  in ev.features">                
+                {{value}}</li>                       
+        </ul> 
+        <div ng-if="ev.otherInfo">OtherInfo :                           
+               <span ng-repeat="(key, value)  in ev.otherInfo"> {{value}}</span>                     
+        </div>
+        <ul ng-if="ev.misc">Misc:
+            <li ng-repeat="(key, value)  in ev.misc">                
+                <b>{{key}} : </b>{{value}}</li>                       
+        </ul>
+        
+        <!--<ion-slide-box on-slide-changed="slideHasChanged($index)">
+                    <ion-slide ng-repeat="images in ev.images">
+                        <div class="row">
+                            <div class="col col-50" ng-repeat="img in images" ng-click="showImage(img.image);"><img ng-src="{{img.image|serverimage}}" imgloadingsec class="full-image"></div>
+                        </div>
+                    </ion-slide>
+                </ion-slide-box>    -->
+    </ion-content>
+    </div>
+</ion-view>
