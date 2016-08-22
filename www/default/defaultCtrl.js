@@ -3,12 +3,12 @@ var myCitiModule1 = angular.module('myCiti.controllers');
 
 //businessList
 myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams, DefaultService, firebaseStorageService) {
-
     $scope.pageTitle = $stateParams.subCategoryName;
     $scope.images = {};
 
     var businessList = function() {
         console.log('main cat is' + $stateParams.mainCategoryName);
+
         var h = DefaultService.getBusinessList($stateParams.subCategoryId, $stateParams.mainCategoryName);
         return h;
     };

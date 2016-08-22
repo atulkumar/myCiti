@@ -20,6 +20,8 @@ var services = angular.module('myCiti.services');
 
             if (angular.lowercase(mainCategoryName) == 'automobile')
                 list = $firebaseArray(firebaseDataService.automobile_mapping.child('/' + subCategoryId));
+            if (angular.lowercase(mainCategoryName) == 'beauty')
+                list = $firebaseArray(firebaseDataService.beauty_mapping.child('/' + subCategoryId));
             list.$loaded().then(function() {
                 angular.forEach(list, function(value, key) {
                     console.log('key -' + key);
@@ -28,6 +30,8 @@ var services = angular.module('myCiti.services');
                     var r;
                     if (angular.lowercase(mainCategoryName) == 'automobile')
                         r = $firebaseObject(firebaseDataService.automobile.child('/' + value.$id));
+                    if (angular.lowercase(mainCategoryName) == 'beauty')
+                        r = $firebaseObject(firebaseDataService.beauty.child('/' + value.$id));
                     r.$loaded().then(function() {
                         businessList.push(r);
                     })
@@ -37,6 +41,7 @@ var services = angular.module('myCiti.services');
         }
 
         function getBusinessDetails(businessId, subCategoryName) {
+            console.log(subCategoryName);
             var business = $firebaseObject(firebaseDataService + '.' + subCategoryName + '.' + child('/' + businessId));
             return business;
         }
