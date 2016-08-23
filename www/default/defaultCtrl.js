@@ -6,7 +6,7 @@ myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams, DefaultSe
 
     $scope.pageTitle = $stateParams.subCategoryName;
     $scope.images = {};
-
+    $scope.mainCategoryName = $stateParams.mainCategoryName;
     var businessList = function() {
         console.log('main cat is' + $stateParams.mainCategoryName);
         var h = DefaultService.getBusinessList($stateParams.subCategoryId, $stateParams.mainCategoryName);
@@ -33,9 +33,10 @@ myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams, DefaultSe
     }
 });
 
-//HOSPITAL DETAILS
-myCitiModule1.controller('BusinessDetailsCtrl', function($scope, $stateParams, DefaultService, firebaseStorageService) {
-    var business = DefaultService.getBusinessDetails($stateParams.businessId);
+//BUSINESS DETAILS
+myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, DefaultService, firebaseStorageService) {
+    debugger;
+    var business = DefaultService.getBusinessDetails($stateParams.businessId, $stateParams.subCategoryName);
     $scope.business = business;
 
     business.$loaded().then(function() {

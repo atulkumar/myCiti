@@ -59,6 +59,10 @@ myCitiModule1.controller('subCategoriesCtrl', function($scope, $stateParams, hom
             if ($scope.mainCategory.name == "Automobile") {
                 return "#/app/default/" + $scope.mainCategory.name + "/" + subCategoryId + "/" + subCategoryName;;
             }
+            if ($scope.mainCategory.name == "Beauty") {
+                return "#/app/default/" + $scope.mainCategory.name + "/" + subCategoryId + "/" + subCategoryName;;
+            }
+            
             if (subCategoryName == "movies") {
                 return "#/app/movies";
             }

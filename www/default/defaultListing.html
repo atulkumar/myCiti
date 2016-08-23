@@ -11,7 +11,7 @@
         <!--Categories-->
         <ul class="col">
             <li ng-repeat="business in businessList | orderBy:'priority'">
-                <a href="#/app/medicalDetails/{{business.$id}}">
+                <a href="#/app/defaultDetails/{{mainCategoryName}}/{{business.$id}}">
                     <img src="http://lorempixum.com/100/100/nature/1" />
                     <h3>{{business.name | camelcase}}</h3>
                     <p>{{business.desc}}</p>

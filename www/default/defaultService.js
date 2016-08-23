@@ -20,6 +20,8 @@ var services = angular.module('myCiti.services');
 
             if (angular.lowercase(mainCategoryName) == 'automobile')
                 list = $firebaseArray(firebaseDataService.automobile_mapping.child('/' + subCategoryId));
+            else if (angular.lowercase(mainCategoryName) == 'beauty')
+                list = $firebaseArray(firebaseDataService.beauty_mapping.child('/' + subCategoryId));
             list.$loaded().then(function() {
                 angular.forEach(list, function(value, key) {
                     console.log('key -' + key);
@@ -28,6 +30,8 @@ var services = angular.module('myCiti.services');
                     var r;
                     if (angular.lowercase(mainCategoryName) == 'automobile')
                         r = $firebaseObject(firebaseDataService.automobile.child('/' + value.$id));
+                    else if (angular.lowercase(mainCategoryName) == 'beauty')
+                        r = $firebaseObject(firebaseDataService.beauty.child('/' + value.$id));
                     r.$loaded().then(function() {
                         businessList.push(r);
                     })
@@ -36,8 +40,14 @@ var services = angular.module('myCiti.services');
             return businessList;
         }
 
-        function getBusinessDetails(businessId, subCategoryName) {
-            var business = $firebaseObject(firebaseDataService + '.' + subCategoryName + '.' + child('/' + businessId));
+        function getBusinessDetails(businessId, mainCategoryName) {
+            var business;
+            debugger;
+            if (angular.lowercase(mainCategoryName) == 'automobile')
+                business = $firebaseObject(firebaseDataService.automobile.child('/' + businessId));
+            else if (angular.lowercase(mainCategoryName) == 'beauty')
+                business = $firebaseObject(firebaseDataService.beauty.child('/' + businessId));
+
             return business;
         }
     }
