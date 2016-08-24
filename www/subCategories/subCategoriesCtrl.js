@@ -47,19 +47,23 @@ myCitiModule1.controller('subCategoriesCtrl', function($scope, $stateParams, hom
     $scope.subCategories = subCategories();
 
     $scope.getUrl = function(subCategoryId, subCategoryName) {
-
+            debugger;
             if ($scope.mainCategory.name == "Dining") {
                 //alert('dining');
                 return "#/app/dining/" + subCategoryId + "/" + subCategoryName;
             }
-            if ($scope.mainCategory.name == "Health") {
+            if ($scope.mainCategory.name == "Medical") {
                 //alert('dining');
                 return "#/app/medical/" + subCategoryId + "/" + subCategoryName;
             }
             if ($scope.mainCategory.name == "Automobile") {
                 return "#/app/default/" + $scope.mainCategory.name + "/" + subCategoryId + "/" + subCategoryName;;
             }
-            if (angular.lowercase($scope.mainCategory.name) == "beauty") {
+
+            if ($scope.mainCategory.name == "Beauty") {
+                return "#/app/default/" + $scope.mainCategory.name + "/" + subCategoryId + "/" + subCategoryName;;
+            }
+            if ($scope.mainCategory.name == "Wellness") {
                 return "#/app/default/" + $scope.mainCategory.name + "/" + subCategoryId + "/" + subCategoryName;;
             }
 

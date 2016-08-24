@@ -5,7 +5,7 @@ var myCitiModule1 = angular.module('myCiti.controllers');
 myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams, DefaultService, firebaseStorageService) {
     $scope.pageTitle = $stateParams.subCategoryName;
     $scope.images = {};
-
+    $scope.mainCategoryName = $stateParams.mainCategoryName;
     var businessList = function() {
         console.log('main cat is' + $stateParams.mainCategoryName);
 
@@ -33,17 +33,20 @@ myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams, DefaultSe
     }
 });
 
-//HOSPITAL DETAILS
-myCitiModule1.controller('BusinessDetailsCtrl', function($scope, $stateParams, DefaultService, firebaseStorageService) {
-    var business = DefaultService.getBusinessDetails($stateParams.businessId);
+//BUSINESS DETAILS
+myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, DefaultService, firebaseStorageService) {
+    debugger;
+    var business = DefaultService.getBusinessDetails($stateParams.businessId, $stateParams.subCategoryName);
     $scope.business = business;
 
     business.$loaded().then(function() {
         angular.forEach(business, function(value, key) {
-            //debugger;
+            debugger;
             console.log(key);
             if (key === "image") {
-                var pathReference = firebaseStorageService.businessList.child(value);
+                if (angular.lowercase($stateParams.subCategoryName) == "wellness")
+                    var pathReference = firebaseStorageService.health.child(value);
+
                 pathReference.getDownloadURL().then(function(url) {
                     $scope.$apply(function() {
                         $scope.image = url;

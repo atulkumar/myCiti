@@ -32,7 +32,7 @@
 //   };
 //   firebase.initializeApp(config);
 // var commentsRef = firebase.database().ref('post-comments/' + postId);
-    
+
 
 
 // console.clear();
@@ -54,20 +54,22 @@
 
 
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('myCiti')
-    .factory('firebaseStorageService', firebaseStorageService);
+    angular
+        .module('myCiti')
+        .factory('firebaseStorageService', firebaseStorageService);
 
-  function firebaseStorageService() {    
-    var storage=firebase.storage().ref();
+    function firebaseStorageService() {
+        var storage = firebase.storage().ref();
 
-     var service = {                
-        images:storage.child('mainCategories'),
-        movies:storage.child('Entertainment/Movies'),
-        hospitals:storage.child('Medical')
-    };
-    return service;
-  }
+        var service = {
+            images: storage.child('mainCategories'),
+            movies: storage.child('Entertainment/Movies'),
+            hospitals: storage.child('Medical'),
+            health: storage.child('Health')
+
+        };
+        return service;
+    }
 })();
