@@ -81,6 +81,8 @@
             automobile_mapping: root.child('automobile_mapping'),
             beauty: root.child('beauty'),
             beauty_mapping: root.child('beauty_mapping'),
+            health: root.child('health'),
+            health_mapping: root.child('health_mapping'),
 
             images: storage.child('mainCategories')
         };
