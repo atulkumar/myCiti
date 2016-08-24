@@ -41,10 +41,12 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, De
 
     business.$loaded().then(function() {
         angular.forEach(business, function(value, key) {
-            //debugger;
+            debugger;
             console.log(key);
             if (key === "image") {
-                var pathReference = firebaseStorageService.businessList.child(value);
+                if (angular.lowercase($stateParams.subCategoryName) == "wellness")
+                    var pathReference = firebaseStorageService.health.child(value);
+
                 pathReference.getDownloadURL().then(function(url) {
                     $scope.$apply(function() {
                         $scope.image = url;
