@@ -1,55 +1,64 @@
 <ion-view view-title={{business.name|uppercase}} class="myCiti-view">
     <ion-content>
-        <div class="card">
-            <div class="item">
-                <img ng-src='{{image}}' class="full-image" height="150px;">
-            </div>
-        </div>
-        <div class="card">
-            <div class="item">
-                <h2>{{business.name | uppercase}}</h2></item>
-
-                <div class="item item-body">
-                    <div ng-if="business.desc!=null">
-                        <p>{{business.desc}}</p>
+        <ion-slide-box show-pager="false" ion-slide-tabs slide-tabs-scrollable="false">
+            <ion-slide ion-slide-tab-label="Info">
+                <div class="card">
+                    <div class="item">
+                        <img ng-src='{{image}}' class="full-image" height="150px;">
                     </div>
                 </div>
-            </div>
-            <div class="card" ng-repeat="card in business.cards | orderBy:'priority'">
-                <div class="item item-body">
-                    <div ng-if='card.title != null' class="item">
-                        <h4>{{card.title | uppercase}}</h4>
+                <div class="card">
+                    <div class="item">
+                        <h2>{{business.name | uppercase}}</h2></item>
+
+                        <div class="item item-body">
+                            <div ng-if="business.desc!=null">
+                                <p>{{business.desc}}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div ng-if="card['sub-title'] !=null" class="item">
-                        <h5>{{card['sub-title'] | camelcase}}</h5>
-                    </div>
-                    <div ng-if='card.image !=null ' class="item">
-                        <img ng-src='{{card.image}} ' class="full-image " height="150px;">
-                    </div>
-                    <div ng-if='card.desc !=null ' class="item">
-                        <p>{{card.desc}}</p>
-                    </div>
-                    <div ng-if="card['list-with-title'] != null" class="item">
-                        <ul ng-repeat="listItem in card['list-with-title']">
-                            <li ng-if="listItem !=null">{{listItem.key | camelcase}} - {{listItem.value | camelcase}}</li>
-                        </ul>
-                    </div>
-                    <div ng-if="card.list != null">
-                        <ul class="list">
-                            <li ng-repeat="item in card.list">
-                                <span>{{item | camelcase}}</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div ng-if="card.images != null" class="item">
-                        <div ng-repeat="images in card.images">
-                            <span ng-repeat="img in images">{{img.title}}
+                    <div class="card" ng-repeat="card in business.cards | orderBy:'priority'">
+                        <div class="item item-body">
+                            <div ng-if='card.title != null' class="item">
+                                <h4>{{card.title | uppercase}}</h4>
+                            </div>
+                            <div ng-if="card['sub-title'] !=null" class="item">
+                                <h5>{{card['sub-title'] | camelcase}}</h5>
+                            </div>
+                            <div ng-if='card.image !=null ' class="item">
+                                <img ng-src='{{card.image}} ' class="full-image " height="150px;">
+                            </div>
+                            <div ng-if='card.desc !=null ' class="item">
+                                <p>{{card.desc}}</p>
+                            </div>
+                            <div ng-if="card['list-with-title'] != null" class="item">
+                                <ul ng-repeat="listItem in card['list-with-title']">
+                                    <li ng-if="listItem !=null">{{listItem.key | camelcase}} - {{listItem.value | camelcase}}</li>
+                                </ul>
+                            </div>
+                            <div ng-if="card.list != null">
+                                <ul class="list">
+                                    <li ng-repeat="item in card.list">
+                                        <span>{{item | camelcase}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div ng-if="card.images != null" class="item">
+                                <div ng-repeat="images in card.images">
+                                    <span ng-repeat="img in images">{{img.title}}
                     <!--<img ng-src='{{img.image}}' height="100px;width:100px">-->
                     </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Gallery">
+                <ion-gallery ion-gallery-items="items" ion-gallery-row="3"></ion-gallery>
+            </ion-slide>
+            <ion-slide ion-slide-tab-label="Contact">
+                <h1>Tab 3</h1></ion-slide>
+        </ion-slide-box>
     </ion-content>
 </ion-view>

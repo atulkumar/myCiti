@@ -1,24 +1,44 @@
 'use strict';
 var myCitiModule = angular.module('myCiti.controllers');
 
-myCitiModule.controller('homeCtrl', function($scope,$cordovaDevice, homeService,firebaseDataService) {
+myCitiModule.controller('homeCtrl', function($scope, $cordovaDevice, $location, homeService, firebaseDataService) {
     //$scope.mainCategories = homeService.getMainCategories();       
+    function internetaccess(toState) {
+        if (navigator) {
+            if (navigator.onLine != true) {
+                onoffline = false;
+                $location.url("/access/offline");
+            } else {
 
-document.addEventListener("deviceready", function () {
+                onoffline = true;
+            }
+        }
+    }
+    $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        internetaccess(toState);
+    });
+    window.addEventListener("offline", function(e) {
+        internetaccess();
+    })
+    window.addEventListener("online", function(e) {
+        internetaccess();
+    })
 
-    var device = $cordovaDevice.getDevice();
-$scope.device=device;
-    var cordova = $cordovaDevice.getCordova();
+    document.addEventListener("deviceready", function() {
 
-    var model = $cordovaDevice.getModel();
+        var device = $cordovaDevice.getDevice();
+        $scope.device = device;
+        var cordova = $cordovaDevice.getCordova();
 
-    var platform = $cordovaDevice.getPlatform();
+        var model = $cordovaDevice.getModel();
 
-    var uuid = $cordovaDevice.getUUID();
+        var platform = $cordovaDevice.getPlatform();
 
-    var version = $cordovaDevice.getVersion();
+        var uuid = $cordovaDevice.getUUID();
 
-  }, false);
+        var version = $cordovaDevice.getVersion();
+
+    }, false);
 
 
     $scope.slides = homeService.getCarauselData();

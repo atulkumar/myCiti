@@ -9,7 +9,7 @@ angular.module('underscore', [])
 //         $sceDelegateProvider.resourceUrlBlacklist(['http://myapp.example.com/clickThru**']);
 // });
 
-angular.module('myCiti', ['ionic', 'myCiti.controllers',
+angular.module('myCiti', ['ionic', 'ion-gallery', 'myCiti.controllers',
         //'myCiti.directives',  
         //'myCiti.views',
         'myCiti.services',
