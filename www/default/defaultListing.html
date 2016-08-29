@@ -3,6 +3,8 @@
         <span>{{pageTitle | camelcase}}</span>
     </ion-nav-title>
     <ion-content>
+        <ion-refresher  pulling-text="Pull to refresh..."  on-refresh="doRefresh()">
+        </ion-refresher>
         <!--Top slider-->
         <!--<ion-slide-box does-continue="true">
             <ion-slide ng-repeat="slide in slides">

@@ -2,7 +2,7 @@
 var myCitiModule1 = angular.module('myCiti.controllers');
 
 //businessList
-myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams, DefaultService, firebaseStorageService) {
+myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams,$timeout, DefaultService, firebaseStorageService) {
     $scope.pageTitle = $stateParams.subCategoryName;
     $scope.images = {};
     $scope.mainCategoryName = $stateParams.mainCategoryName;
@@ -31,11 +31,26 @@ myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams, DefaultSe
             // Handle any errors
         });
     }
+
+$scope.doRefresh = function() {
+    
+    console.log('Refreshing!');
+    $timeout( function() {
+      //simulate async response
+      businessList();
+
+      //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    
+    }, 1000);
+      
+  };
+
 });
 
 //BUSINESS DETAILS
-myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, DefaultService, firebaseStorageService) {
-    debugger;
+myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$ionicLoading,DefaultService, firebaseStorageService) {
+    
     var business = DefaultService.getBusinessDetails($stateParams.businessId, $stateParams.subCategoryName);
     $scope.business = business;
     $scope.items = [{
@@ -56,7 +71,7 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, De
 
     business.$loaded().then(function() {
         angular.forEach(business, function(value, key) {
-            debugger;
+            
             console.log(key);
             if (key === "image") {
                 if (angular.lowercase($stateParams.subCategoryName) == "wellness")
@@ -70,4 +85,25 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, De
             }
         });
     });
+
+    function initialize() {
+        var myLatlng = new google.maps.LatLng(30.704261,76.691823);        
+        var mapOptions = {
+          center: myLatlng,
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP          
+        };
+        
+        var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+        
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Business Name'
+        });       
+        $scope.map = map;  
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);    
+
 });
