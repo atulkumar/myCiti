@@ -83,6 +83,7 @@
             beauty_mapping: root.child('beauty_mapping'),
             health: root.child('health'),
             health_mapping: root.child('health_mapping'),
+            merchants: root.child('merchants'),
             images: storage.child('mainCategories')
         };
         return service;

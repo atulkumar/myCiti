@@ -49,7 +49,7 @@ $scope.doRefresh = function() {
 });
 
 //BUSINESS DETAILS
-myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$ionicLoading,DefaultService, firebaseStorageService) {
+myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$ionicLoading,DefaultService,MerchantService, firebaseStorageService) {
     
     var business = DefaultService.getBusinessDetails($stateParams.businessId, $stateParams.subCategoryName);
     $scope.business = business;
@@ -61,12 +61,11 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$io
         sub: '' /* Not showed */
     }, {
         src: 'http://www.hdwallpapersimages.com/wp-content/uploads/2014/01/Winter-Tiger-Wild-Cat-Images.jpg',
-        thumb: 'http://www.gettyimages.co.uk/CMS/StaticContent/1391099215267_hero2.jpg'
-    }, {
-        src: 'http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg',
-        sub: '' /* Not showed */
+        thumb: 'http://www.hdwallpapersimages.com/wp-content/uploads/2014/01/Winter-Tiger-Wild-Cat-Images.jpg'
     }];
 
+var merchant = MerchantService.getMerchantDetails(1);
+    $scope.merchant = merchant;
 
 
     business.$loaded().then(function() {
@@ -87,21 +86,24 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$io
     });
 
     function initialize() {
-        var myLatlng = new google.maps.LatLng(30.704261,76.691823);        
+        try {
+           var myLatlng = new google.maps.LatLng(30.704261,76.691823);        
         var mapOptions = {
           center: myLatlng,
           zoom: 16,
           mapTypeId: google.maps.MapTypeId.ROADMAP          
         };
-        
-        var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-        
+        var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);        
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: map,
           title: 'Business Name'
         });       
         $scope.map = map;  
+        } catch (error) {
+            alert('error');
+        }
+         
       }
 
       google.maps.event.addDomListener(window, 'load', initialize);    

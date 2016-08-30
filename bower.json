@@ -5,6 +5,7 @@
     "ionic": "driftyco/ionic-bower#1.1.1"
   },
   "dependencies": {
-    "ion-gallery": "^0.1.14"
+    "ion-gallery": "^0.1.14",
+    "font-awesome": "fontawesome#^4.6.3"
   }
 }
