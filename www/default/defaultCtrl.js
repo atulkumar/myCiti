@@ -49,7 +49,7 @@ $scope.doRefresh = function() {
 });
 
 //BUSINESS DETAILS
-myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$ionicLoading,DefaultService,MerchantService, firebaseStorageService) {
+myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$ionicLoading,uiGmapGoogleMapApi,DefaultService,MerchantService, firebaseStorageService) {
     
     var business = DefaultService.getBusinessDetails($stateParams.businessId, $stateParams.subCategoryName);
     $scope.business = business;
@@ -84,28 +84,29 @@ var merchant = MerchantService.getMerchantDetails(1);
             }
         });
     });
-
-    function initialize() {
-        try {
-           var myLatlng = new google.maps.LatLng(30.704261,76.691823);        
-        var mapOptions = {
-          center: myLatlng,
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.ROADMAP          
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);        
-        var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'Business Name'
-        });       
-        $scope.map = map;  
-        } catch (error) {
-            alert('error');
-        }
+$scope.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };
+$scope.options = {scrollwheel: false};
+    // function initialize() {
+    //     try {
+    //        var myLatlng = new google.maps.LatLng(30.704261,76.691823);        
+    //     var mapOptions = {
+    //       center: myLatlng,
+    //       zoom: 16,
+    //       mapTypeId: google.maps.MapTypeId.ROADMAP          
+    //     };
+    //     var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);        
+    //     var marker = new google.maps.Marker({
+    //       position: myLatlng,
+    //       map: map,
+    //       title: 'Business Name'
+    //     });       
+    //     $scope.map = map;  
+    //     } catch (error) {
+    //         alert('error');
+    //     }
          
-      }
+    //   }
 
-      google.maps.event.addDomListener(window, 'load', initialize);    
+    //   google.maps.event.addDomListener(window, 'load', initialize);    
 
 });

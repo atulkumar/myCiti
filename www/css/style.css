@@ -601,3 +601,5 @@ height:500px;
 width:100%;
 background-color: #eeeeee;
 }
+
+.angular-google-map-container { height: 400px; }

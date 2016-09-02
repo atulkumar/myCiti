@@ -15,6 +15,6 @@ myCitiModule1.directive("merchant", function() {
             phone1:'@',
             phone2:'@'
         },
-        template: '<div class="card"><div class="item"><h2>{{name}}</h2><p>{{address1}}</p><p>{{address2}}</p><p>Tel : {{phone1}},{{phone2}}</p><p>Email:{{email}}</p></div>'
+        template: '<div class="card"><div class="item"><h2>{{name}}</h2><p><i class="fa fa-map-marker"></i>  {{address1}}</p><p>{{address2}}</p><p><i class="fa fa-phone"></i>  {{phone1}}, {{phone2}}</p><p><i class="fa fa-envelope"></i>  {{email}}</p></div>'
     }
 })
