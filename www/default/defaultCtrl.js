@@ -84,8 +84,16 @@ var merchant = MerchantService.getMerchantDetails(1);
             }
         });
     });
-$scope.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };
+$scope.map = {center: {latitude: 30.705626, longitude: 76.692359 }, zoom: 14,disableDefaultUI: true};
 $scope.options = {scrollwheel: false};
+$scope.markers = [{
+        id: 0,
+        coords: {
+            latitude: 30.705626,
+            longitude: 76.692359
+        },
+        data: 'restaurant'
+    }];
     // function initialize() {
     //     try {
     //        var myLatlng = new google.maps.LatLng(30.704261,76.691823);        
