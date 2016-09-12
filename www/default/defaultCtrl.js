@@ -2,7 +2,7 @@
 var myCitiModule1 = angular.module('myCiti.controllers');
 
 //businessList
-myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams,$timeout, DefaultService, firebaseStorageService) {
+myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams, $timeout, DefaultService, firebaseStorageService) {
     $scope.pageTitle = $stateParams.subCategoryName;
     $scope.images = {};
     $scope.mainCategoryName = $stateParams.mainCategoryName;
@@ -32,25 +32,25 @@ myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams,$timeout, 
         });
     }
 
-$scope.doRefresh = function() {
-    
-    console.log('Refreshing!');
-    $timeout( function() {
-      //simulate async response
-      businessList();
+    $scope.doRefresh = function() {
 
-      //Stop the ion-refresher from spinning
-      $scope.$broadcast('scroll.refreshComplete');
-    
-    }, 1000);
-      
-  };
+        console.log('Refreshing!');
+        $timeout(function() {
+            //simulate async response
+            businessList();
+
+            //Stop the ion-refresher from spinning
+            $scope.$broadcast('scroll.refreshComplete');
+
+        }, 1000);
+
+    };
 
 });
 
 //BUSINESS DETAILS
-myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$ionicLoading,DefaultService,MerchantService, firebaseStorageService) {
-    
+myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, $ionicLoading, DefaultService, MerchantService, firebaseStorageService) {
+
     var business = DefaultService.getBusinessDetails($stateParams.businessId, $stateParams.subCategoryName);
     $scope.business = business;
     $scope.items = [{
@@ -63,15 +63,36 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$io
         src: 'http://www.hdwallpapersimages.com/wp-content/uploads/2014/01/Winter-Tiger-Wild-Cat-Images.jpg',
         thumb: 'http://www.hdwallpapersimages.com/wp-content/uploads/2014/01/Winter-Tiger-Wild-Cat-Images.jpg'
     }];
-
-var merchant = MerchantService.getMerchantDetails(1);
+    $scope.photos = new Array();
+    var merchant = MerchantService.getMerchantDetails(1);
     $scope.merchant = merchant;
-
 
     business.$loaded().then(function() {
         angular.forEach(business, function(value, key) {
-            
-            console.log(key);
+
+            if (key === "cards") {
+
+                angular.forEach(value, function(value1, key1) {
+
+                    angular.forEach(value1, function(value2, key2) {
+
+                        console.log(key2 + '-' + value2);
+                        if (key2 == "images") {
+                            value2.forEach(function(photo) {
+                                var pathReference = firebaseStorageService.health.child(photo);
+
+                                pathReference.getDownloadURL().then(function(url) {
+                                    $scope.$apply(function() {
+                                        console.log('pushed');
+                                        $scope.photos.push(url);
+                                    });
+                                });
+                            }, value2);
+
+                        }
+                    });
+                });
+            }
             if (key === "image") {
                 if (angular.lowercase($stateParams.subCategoryName) == "wellness")
                     var pathReference = firebaseStorageService.health.child(value);
@@ -87,25 +108,25 @@ var merchant = MerchantService.getMerchantDetails(1);
 
     function initialize() {
         try {
-           var myLatlng = new google.maps.LatLng(30.704261,76.691823);        
-        var mapOptions = {
-          center: myLatlng,
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.ROADMAP          
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);        
-        var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'Business Name'
-        });       
-        $scope.map = map;  
+            var myLatlng = new google.maps.LatLng(30.704261, 76.691823);
+            var mapOptions = {
+                center: myLatlng,
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: 'Business Name'
+            });
+            $scope.map = map;
         } catch (error) {
             alert('error');
         }
-         
-      }
 
-      google.maps.event.addDomListener(window, 'load', initialize);    
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
 
 });

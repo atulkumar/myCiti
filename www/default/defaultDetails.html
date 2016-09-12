@@ -43,14 +43,13 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div ng-if="card.images != null" class="item">
-                                <div ng-repeat="images in card.images track by $index">
-                                    <span ng-repeat="img in images">{{img.title}}
-                    <!--<img ng-src='{{img.image}}' height="100px;width:100px">-->
-                    </span>
-                                </div>
-                            </div>
                         </div>
+                    </div>
+                    <div ng-if="photos != null" class="item">
+                        <span ng-repeat="img in photos">
+                                             <img ng-src='{{img}}' height="100px;width:50px">
+                    </span>
+
                     </div>
                 </div>
             </ion-slide>
@@ -58,15 +57,18 @@
                 <ion-gallery ion-gallery-items="items" ion-gallery-row="3"></ion-gallery>
             </ion-slide>
             <ion-slide ion-slide-tab-label="Contact"><i class="fa fa-bars"></i>
-                <merchant name="{{merchant.name}}" email="{{merchant.email}}" address1="{{merchant.Address.address1}}" address1="{{merchant.Address.address2}}" phone1="{{merchant.Address.phone1}}" phone2="{{merchant.Address.phone2}}"></user>
-                <div class="card">
-                    <div class="item"><div class='map-wrapper'>
-                  <div id="map-canvas" data-tap-disabled="true"></div></div>
+                <merchant name="{{merchant.name}}" email="{{merchant.email}}" address1="{{merchant.Address.address1}}" address1="{{merchant.Address.address2}}" phone1="{{merchant.Address.phone1}}" phone2="{{merchant.Address.phone2}}">
+                    </user>
+                    <div class="card">
+                        <div class="item">
+                            <div class='map-wrapper'>
+                                <div id="map-canvas" data-tap-disabled="true"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>        
 
 
-                  </ion-slide>
+            </ion-slide>
         </ion-slide-box>
     </ion-content>
 </ion-view>

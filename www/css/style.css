@@ -529,7 +529,7 @@ h4 {
 
 .myCiti-view p {
     font-size: 0.907em;
-    line-height: 25px;
+    line-height: 22px;
 }
 
 .myCiti-view .tag {
@@ -589,15 +589,16 @@ h4 {
 }
 
 #map-canvas {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .scroll {
-  height: 100%;
+    height: 100%;
 }
-.map-wrapper{
-height:500px;
-width:100%;
-background-color: #eeeeee;
+
+.map-wrapper {
+    height: 500px;
+    width: 100%;
+    background-color: #eeeeee;
 }
