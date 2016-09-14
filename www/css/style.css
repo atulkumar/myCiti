@@ -598,7 +598,11 @@ h4 {
 }
 
 .map-wrapper {
-    height: 500px;
+    height: 300px;
     width: 100%;
     background-color: #eeeeee;
+}
+
+.angular-google-map-container {
+    height: 300px;
 }

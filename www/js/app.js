@@ -19,8 +19,8 @@ angular.module('myCiti', ['ionic', 'ion-gallery', 'myCiti.controllers',
         //'ngMap',
         //'angularMoment',
         'underscore',
-        'firebase',
-        'ch.filters', 'ngCordova'
+        'firebase',        
+        'ch.filters', 'ngCordova','uiGmapgoogle-maps'
     ])
     .run(function($ionicPlatform, $rootScope, $state) {
         $ionicPlatform.on("deviceready", function() {
@@ -52,11 +52,16 @@ angular.module('myCiti', ['ionic', 'ion-gallery', 'myCiti.controllers',
             //PushNotificationsService.register();
         })
     })
-    .config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
+    .config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider,uiGmapGoogleMapApiProvider) {
         $sceDelegateProvider.resourceUrlWhitelist(['self', 'https://firebasestorage.googleapis.com/v0/b/resplendent-heat-2623.appspot.com**', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
         // // The blacklist overrides the whitelist so the open redirect here is blocked.
         $sceDelegateProvider.resourceUrlBlacklist(['http://myapp.example.com/clickThru**']);
-
+        
+        uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyBP_UmN-ucFZBxZg8l1CK-6riOMz0_atvE',
+        libraries: '',
+        v: '3.17'
+        });
 
         $stateProvider
             .state('walkthrough', {
