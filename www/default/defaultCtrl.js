@@ -50,8 +50,8 @@ myCitiModule1.controller('DefaultCtrl', function($scope, $stateParams, $timeout,
 
 //BUSINESS DETAILS
 
-myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$ionicLoading,uiGmapGoogleMapApi,DefaultService,MerchantService, firebaseStorageService) {
-  
+myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, $ionicLoading, uiGmapGoogleMapApi, DefaultService, MerchantService, firebaseStorageService) {
+
     var business = DefaultService.getBusinessDetails($stateParams.businessId, $stateParams.subCategoryName);
     $scope.business = business;
     $scope.items = [{
@@ -105,8 +105,7 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$io
                 });
             }
         });
-    });
-<<<<<<< HEAD
+    }); << << << < HEAD
 
     function initialize() {
         try {
@@ -129,11 +128,10 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams,$io
 
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
-=======
-$scope.map = {center: {latitude: 30.705626, longitude: 76.692359 }, zoom: 14,disableDefaultUI: true};
-$scope.options = {scrollwheel: false};
-$scope.markers = [{
+    google.maps.event.addDomListener(window, 'load', initialize); === === =
+    $scope.map = { center: { latitude: 30.705626, longitude: 76.692359 }, zoom: 14, disableDefaultUI: true };
+    $scope.options = { scrollwheel: false };
+    $scope.markers = [{
         id: 0,
         coords: {
             latitude: 30.705626,
@@ -159,10 +157,10 @@ $scope.markers = [{
     //     } catch (error) {
     //         alert('error');
     //     }
-         
+
     //   }
 
     //   google.maps.event.addDomListener(window, 'load', initialize);    
->>>>>>> a4632f82ff5147c0c515195f11a50057d621441d
+    >>> >>> > a4632f82ff5147c0c515195f11a50057d621441d
 
 });
