@@ -105,30 +105,8 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, $i
                 });
             }
         });
-    }); << << << < HEAD
-
-    function initialize() {
-        try {
-            var myLatlng = new google.maps.LatLng(30.704261, 76.691823);
-            var mapOptions = {
-                center: myLatlng,
-                zoom: 16,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-            var marker = new google.maps.Marker({
-                position: myLatlng,
-                map: map,
-                title: 'Business Name'
-            });
-            $scope.map = map;
-        } catch (error) {
-            alert('error');
-        }
-
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize); === === =
+    });
+   
     $scope.map = { center: { latitude: 30.705626, longitude: 76.692359 }, zoom: 14, disableDefaultUI: true };
     $scope.options = { scrollwheel: false };
     $scope.markers = [{
@@ -138,29 +116,6 @@ myCitiModule1.controller('DefaultDetailsCtrl', function($scope, $stateParams, $i
             longitude: 76.692359
         },
         data: 'restaurant'
-    }];
-    // function initialize() {
-    //     try {
-    //        var myLatlng = new google.maps.LatLng(30.704261,76.691823);        
-    //     var mapOptions = {
-    //       center: myLatlng,
-    //       zoom: 16,
-    //       mapTypeId: google.maps.MapTypeId.ROADMAP          
-    //     };
-    //     var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);        
-    //     var marker = new google.maps.Marker({
-    //       position: myLatlng,
-    //       map: map,
-    //       title: 'Business Name'
-    //     });       
-    //     $scope.map = map;  
-    //     } catch (error) {
-    //         alert('error');
-    //     }
-
-    //   }
-
-    //   google.maps.event.addDomListener(window, 'load', initialize);    
-    >>> >>> > a4632f82ff5147c0c515195f11a50057d621441d
+    }];  
 
 });
